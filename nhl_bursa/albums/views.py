@@ -1,6 +1,6 @@
-from django.urls import path
-from . import views
+from django.shortcuts import render
+from .models import Card
 
-urlpatterns = [
-    path('', views.album_list, name='album_list'),
-]
+def album_list(request):
+    cards = Card.objects.filter(owner=request.user) if request.user.is_authenticated else []
+    return render(request, 'albums/album_list.html', {'cards': cards})

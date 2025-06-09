@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('albums.urls')),  # změněno z 'albums.urls' na 'cards.urls'
+    path('', include('albums.urls')),
 ]
 
 if settings.DEBUG:
