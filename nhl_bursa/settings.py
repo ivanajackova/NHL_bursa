@@ -68,7 +68,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'nhl_bursa.wsgi.application'
 
 
-# Database
+# Database skouska
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 from pathlib import Path
