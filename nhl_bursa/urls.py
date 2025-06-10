@@ -24,7 +24,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('albums.urls')),  # TOTO PŘIDEJ
+    path('', include('albums.urls')),
+    path('messaging/', include('messaging.urls')),
+    # TOTO PŘIDEJ
 ]
 
 if settings.DEBUG:
