@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import inbox_view  # nebo co máš jako výchozí pohled
+from . import views
 
 urlpatterns = [
-    path('', inbox_view, name='inbox'),
+    path('inbox/', views.inbox_view, name='inbox'),
+]
