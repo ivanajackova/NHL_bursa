@@ -2,7 +2,11 @@
 URL configuration for nhl_bursa project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
+<<<<<<< HEAD
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+=======
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
+>>>>>>> d164f05 (akouška save)
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -17,10 +21,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+<<<<<<< HEAD
+=======
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+>>>>>>> d164f05 (akouška save)
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -29,8 +36,17 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('albums.urls')),
+<<<<<<< HEAD
+    path('messaging/', include('messaging.urls')),
+    # TOTO PŘIDEJ
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+=======
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
 
+>>>>>>> d164f05 (akouška save)

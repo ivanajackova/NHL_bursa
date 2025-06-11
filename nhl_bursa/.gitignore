@@ -1,0 +1,7 @@
+# Ignoruj vývojové prostředí a mezipaměť
+.venv/
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+*.log
