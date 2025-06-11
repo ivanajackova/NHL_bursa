@@ -1,7 +1,36 @@
-# Ignoruj vývojové prostředí a mezipaměť
+# Virtuální prostředí
 .venv/
-.idea/
+venv/
+env/
+virtualenv/
+
+# Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*.so
+.Python
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Build a distribuce
+build/
+dist/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Databáze a logy
 *.log
+*.sqlite3
+
+# Systémové soubory
+.DS_Store
+Thumbs.db
+
+# Prostředí
+.env
+.env.local
