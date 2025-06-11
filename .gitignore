@@ -1,0 +1,13 @@
+# Ignoruj virtuální prostředí
+.venv/
+
+# Ignoruj kompilované Python soubory
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignoruj nastavení vývojového prostředí
+.idea/
+
+# Logy
+*.log
