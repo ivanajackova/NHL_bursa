@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'albums',
     'users',
     'marketplace',
-    'nhl_bursa.messaging',
+    'messaging',
 
 ]
 
