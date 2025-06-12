@@ -35,7 +35,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('albums.urls')),
+    path('', include('nhl_bursa.albums.urls')),
 <<<<<<< HEAD
     path('messaging/', include('messaging.urls')),
     # TOTO PŘIDEJ
