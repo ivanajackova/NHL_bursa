@@ -21,13 +21,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-<<<<<<< HEAD
-=======
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-
->>>>>>> d164f05 (akouška save)
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -36,17 +29,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('nhl_bursa.albums.urls')),
-<<<<<<< HEAD
-    path('messaging/', include('messaging.urls')),
-    # TOTO PŘIDEJ
+    path('messaging/', include('nhl_bursa.messaging.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-=======
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-
->>>>>>> d164f05 (akouška save)
