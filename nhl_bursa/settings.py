@@ -29,10 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'albums',
-    'users',
-    'marketplace',
-    'messaging',
+    'nhl_bursa.albums',
+    'nhl_bursa.marketplace',
+    'nhl_bursa.users',
+    'nhl_bursa.messaging',
 
 ]
 
