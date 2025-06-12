@@ -1,5 +1,5 @@
 from django.db import models
-from albums.models import Card
+from nhl_bursa.albums.models import Card
 
 class Listing(models.Model):
     card = models.OneToOneField(Card, on_delete=models.CASCADE)
