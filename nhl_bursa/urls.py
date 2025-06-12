@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('albums.urls')),
-    path('messaging/', include('messaging.urls')),  # ✅ přidání messaging
+    path('', include('nhl_bursa.albums.urls')),
+    path('messaging/', include('nhl_bursa.messaging.urls')),
 ]
 
 if settings.DEBUG:
