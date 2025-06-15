@@ -28,10 +28,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('nhl_bursa.albums.urls')),  # hlavná stránka vedie na albumy
-    path('messaging/', include('messaging.urls')),  # správy
-    path('marketplace/', include('marketplace.urls')),  # burza
-    path('users/', include('users.urls')),  # používateľské veci
+    path('', include('nhl_bursa.albums.urls')),
+    path('messaging/', include('nhl_bursa.messaging.urls')),
 ]
 
 if settings.DEBUG:
