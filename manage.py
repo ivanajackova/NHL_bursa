@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    """Run administrative tasks."""
+    """Mam tri body, podla kontroly projektu, stále na tom pracujem"""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nhl_bursa.settings')
     try:
         from django.core.management import execute_from_command_line
