@@ -2,16 +2,76 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Moje NHL Kartičky</title>
+    <title>NHL Bursa – Moje album</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #0055a5;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        .buttons a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .buttons a:hover {
+            background-color: #005fa3;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .card img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Moje album</h1>
-    <ul>
-        {% for card in cards %}
-            <li>{{ card.name }}</li>
-        {% empty %}
-            <li>Nemáš žádné kartičky.</li>
-        {% endfor %}
-    </ul>
+
+    <h1>Moje NHL Kartičky</h1>
+
+    {% if user.is_authenticated %}
+        <div class="buttons">
+            <a href="{% url 'add_card' %}">➕ Přidat novou kartičku</a>
+            <a href="{% url 'marketplace_list' %}">💰 Na trh</a>
+            <a href="{% url 'inbox' %}">✉️ Zprávy</a>
+        </div>
+
+        {% if cards %}
+            {% for card in cards %}
+                <div class="card">
+                    <h2>{{ card.name }}</h2>
+                    {% if card.image %}
+                        <img src="{{ card.image.url }}" alt="{{ card.name }}">
+                    {% endif %}
+                    <p>{{ card.description }}</p>
+                    {% if card.is_for_sale %}
+                        <strong>🟢 Na prodej</strong>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Nemáš zatím žádné kartičky v albu.</p>
+        {% endif %}
+    {% else %}
+        <p>Musíš se <a href="/admin/login/">přihlásit</a>, abys viděl svoje kartičky.</p>
+    {% endif %}
+
 </body>
 </html>
