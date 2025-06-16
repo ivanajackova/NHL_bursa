@@ -7,3 +7,5 @@ class Card(models.Model):
     image = models.ImageField(upload_to='cards/')
     description = models.TextField()
     is_for_sale = models.BooleanField(default=False)
+
+    #Tato třída Card definuje databázový model v Django – konkrétně model pro hokejovou kartičku
