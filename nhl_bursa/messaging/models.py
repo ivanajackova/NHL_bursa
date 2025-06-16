@@ -8,3 +8,4 @@ class Message(models.Model):
     content = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
+#Tato třída Message definuje Django model pro zprávy mezi uživateli v aplikaci messaging. V databázi bude reprezentovat jednu zprávu, kterou uživatel poslal jinému uživateli.
