@@ -16,3 +16,4 @@ if settings.DEBUG: #Zajišťuje, že během vývoje (lokálně) bude Django umě
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
+
