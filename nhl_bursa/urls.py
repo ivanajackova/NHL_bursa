@@ -1,32 +1,18 @@
-"""
-URL configuration for nhl_bursa project.
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path
+#Importní část souboru urls.py v Django projektech. Slouží ke správnému směrování URL adres a obsluze statických a mediálních souborů.
+from django.contrib import admin #Django administrační rozhraní, Umožňuje spravovat databázové záznamy (uživatele, kartičky, zprávy...) přes webové rozhraní.
+from django.urls import path, include #Funkce pro definování jednotlivých URL adres, umožňuje vložit URL adresy z jiných aplikací (např. albums, messaging, users...).
+from django.conf import settings #Importuje Django nastavení (settings.py), což je nutné pro kontrolu proměnných jako DEBUG, MEDIA_URL, MEDIA_ROOT atd.
+from django.conf.urls.static import static #Umožňuje v režimu vývoje (DEBUG = True) obsluhovat statické a mediální soubory přímo Django serverem
 
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
 
-urlpatterns = [
+urlpatterns = [ #Je hlavní seznam URL cest
     path('admin/', admin.site.urls),
-    path('', include('nhl_bursa.albums.urls')),
-    path('messaging/', include('nhl_bursa.messaging.urls')),
+    path('', include('nhl_bursa.albums.urls')), #Kořenová adresa / přesměrovává na aplikaci albums.
+    path('messaging/', include('nhl_bursa.messaging.urls')), #Cesty začínající na /messaging/ budou směrovány do messaging aplikace.
 ]
 
-if settings.DEBUG:
+if settings.DEBUG: #Zajišťuje, že během vývoje (lokálně) bude Django umět obsluhovat mediální soubory (např. obrázky, fotky, soubory nahrané uživateli).
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
