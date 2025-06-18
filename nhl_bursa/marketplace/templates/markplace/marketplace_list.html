@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>NHL Burza – Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #0055a5;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        .buttons a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .buttons a:hover {
+            background-color: #005fa3;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .card img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Kartičky na prodej</h1>
+
+<div class="buttons">
+    <a href="{% url 'album_list' %}">← Zpět do alba</a>
+</div>
+
+{% if cards %}
+    {% for card in cards %}
+        <div class="card">
+            <h2>{{ card.name }}</h2>
+            {% if card.image %}
+                <img src="{{ card.image.url }}" alt="{{ card.name }}">
+            {% endif %}
+            <p>{{ card.description }}</p>
+            <strong>🟢 Na prodej</strong>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Momentálně nejsou žádné kartičky na prodej.</p>
+{% endif %}
+
+</body>
+</html>

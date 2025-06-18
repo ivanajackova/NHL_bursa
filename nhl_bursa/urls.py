@@ -10,6 +10,7 @@ urlpatterns = [ #Je hlavní seznam URL cest
     path('admin/', admin.site.urls),
     path('', include('nhl_bursa.albums.urls')), #Kořenová adresa / přesměrovává na aplikaci albums.
     path('messaging/', include('nhl_bursa.messaging.urls')), #Cesty začínající na /messaging/ budou směrovány do messaging aplikace.
+    path('marketplace/', include('nhl_bursa.marketplace.urls')),
 ]
 
 if settings.DEBUG: #Zajišťuje, že během vývoje (lokálně) bude Django umět obsluhovat mediální soubory (např. obrázky, fotky, soubory nahrané uživateli).
