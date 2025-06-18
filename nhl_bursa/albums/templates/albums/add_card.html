@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Přidat novou kartičku</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Uložit</button>
+  </form>
+  <a href="{% url 'album_list' %}">← Zpět na album</a>
+{% endblock %}
+
