@@ -50,7 +50,7 @@ ROOT_URLCONF = 'nhl_bursa.urls' #„Použij soubor urls.py ve složce nhl_bursa 
 TEMPLATES = [  #nastavení HTML šablon
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'nhl_bursa', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
