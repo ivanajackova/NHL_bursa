@@ -5,10 +5,24 @@
 {% block content %}
 <h2>Moje Kartičky</h2>
 {% for card in cards %}
-    <div>
-        <img src="{{ card.image.url }}" width="150">
-        <p><strong>{{ card.name }}</strong></p>
-        <p>{{ card.description }}</p>
+    <div class="card">
+    <h2>{{ card.name }}</h2>
+    {% if card.image %}
+        <img src="{{ card.image.url }}" alt="{{ card.name }}">
+    {% endif %}
+    <p>{{ card.description }}</p>
+    {% if card.is_for_sale %}
+        <strong>🟢 Na prodej</strong>
+    {% endif %}
+
+    <!-- Akční tlačítka -->
+        <div style="margin-top: 10px;">
+        <a href="{% url 'edit_card' card.id %}" style="margin-right: 10px;">✏️ Upravit</a>
+        <a href="{% url 'delete_card' card.id %}" style="margin-right: 10px; color: red;">🗑️ Smazat</a>
+        <a href="{% url 'toggle_sale' card.id %}">
+            {% if card.is_for_sale %}❌ Odebrat z burzy{% else %}💰 Přidat na burzu{% endif %}
+        </a>
+        </div>
     </div>
 {% empty %}
     <p>Nemáš žádné kartičky.</p>
