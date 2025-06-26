@@ -1,5 +1,3 @@
-from django.shortcuts import render, redirect
-from .models import Card
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Card
 from .forms import CardForm
@@ -41,6 +39,3 @@ def toggle_sale(request, card_id):
     card.is_for_sale = not card.is_for_sale
     card.save()
     return redirect('album_list')
-    else:
-        form = CardForm()
-    return render(request, 'albums/add_card.html', {'form': form})
